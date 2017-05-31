@@ -3,7 +3,7 @@
     <img src="./assets/logo.png">
     <link rel="stylesheet" href="./assets/semantic.min.css">
     <todo-list v-bind:todos="todos"></todo-list>
-    <create-todo v-on:add-todo="addTodo"></create-todo>
+    <create-todo v-on:create-todo="createTodo"></create-todo>
     <todo v-on:delete-todo="deleteTodo" v-on:complete-todo="completeTodo" v-for="todo in todos" :todo.sync="todo"></todo>
   </div>
 </template>
@@ -20,6 +20,7 @@ export default {
   },
   methods: {
     createTodo (newTodo) {
+      debugger
       this.todos.push(newTodo)
     }
   },
